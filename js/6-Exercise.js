@@ -5,7 +5,11 @@ inputEl.addEventListener('blur', onInputBlur);
 const totalLenght = inputEl.getAttribute('data-length');
 
 function onInputBlur() {
-  inputEl.value.length == totalLenght
-    ? inputEl.classList.add('valid')
-    : inputEl.classList.add('invalid');
+  if (inputEl.value.length == totalLenght) {
+    inputEl.classList.add('valid');
+    inputEl.classList.remove('invalid');
+  } else {
+    inputEl.classList.remove('valid');
+    inputEl.classList.add('invalid');
+  }
 }
